@@ -1,0 +1,10 @@
+.footer_div {
+  height: 300px;
+  width: 100%;
+  background-color: black;
+}
+
+.d-flex-footer {
+  display: flex;
+  color: white;
+}

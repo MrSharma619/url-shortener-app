@@ -1,0 +1,22 @@
+.bottom_div {
+  height: 200px;
+  width: 100%;
+  background-image: url("bg-boost-desktop.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: hsl(257, 27%, 26%);
+  text-align: center;
+  padding: 70px 0 0 0;
+}
+
+.bottom_head {
+  font-size: 48px;
+  font-weight: bold;
+  color: white;
+}
+
+.bottom_subtext {
+  font-size: 24px;
+  font-weight: bold;
+  color: hsl(257, 7%, 63%);
+}

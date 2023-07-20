@@ -1,0 +1,75 @@
+.history_div {
+  background-color: white;
+  height: 70px;
+  width: 100%;
+  border-radius: 5px;
+}
+
+.d-flex_history {
+  display: flex;
+}
+
+.original_link_div {
+  width: 60%;
+  padding: 8px;
+  margin-left: 30px;
+}
+
+.span_originallink {
+  color: hsl(260, 8%, 14%);
+  font-size: 18px;
+  font-weight: bold;
+  margin: 14px 2px;
+  float: left;
+}
+
+.short_link_div {
+  width: 20%;
+  padding: 8px;
+  margin-left: 190px;
+}
+
+.span_shortlink {
+  color: hsl(180, 66%, 49%);
+  font-size: 18px;
+  font-weight: bold;
+  margin: 14px 2px;
+  float: right;
+}
+
+.link_button_div {
+  width: 20%;
+  margin-left: 30px;
+}
+
+.button_copy {
+  height: 42px;
+  background-color: hsl(180, 66%, 49%);
+  border: none;
+  color: white;
+  padding: 13px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  font-weight: bold;
+  margin: 14px 2px;
+  cursor: pointer;
+  border-radius: 10px;
+}
+
+.button_copied {
+  height: 42px;
+  background-color: hsl(257, 27%, 26%);
+  border: none;
+  color: white;
+  padding: 13px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  font-weight: bold;
+  margin: 14px 2px;
+  cursor: pointer;
+  border-radius: 10px;
+}

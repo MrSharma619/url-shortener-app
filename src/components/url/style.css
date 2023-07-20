@@ -1,0 +1,70 @@
+.url_parent {
+  height: auto;
+  width: 70%;
+  margin: auto;
+  border-radius: 10px;
+}
+
+.url_section {
+  width: 100%;
+  background-image: url("bg-shorten-desktop.svg");
+  background-color: hsl(257, 27%, 26%);
+  margin: auto;
+  position: relative;
+  top: -75px;
+  border-radius: 10px;
+}
+
+.d-flex-url {
+  display: flex;
+  justify-content: center;
+}
+
+.input_url {
+  width: 700px;
+  padding: 12px 20px;
+  margin: 50px 20px 5px 20px;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+.input_url_error {
+  width: 700px;
+  padding: 12px 20px;
+  margin: 50px 20px 5px 20px;
+  display: inline-block;
+  outline: 2px solid red;
+  border: none;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+.button_shorten {
+  height: 42px;
+  background-color: hsl(180, 66%, 49%);
+  border: none;
+  color: white;
+  padding: 13px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  font-weight: bold;
+  margin: 49px 2px;
+  cursor: pointer;
+  border-radius: 10px;
+}
+
+.d-flex-url2 {
+  display: flex;
+  flex-direction: column;
+}
+
+.error_url_input {
+  color: red;
+  font-style: italic;
+  position: relative;
+  left: 20px;
+}
