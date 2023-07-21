@@ -1,36 +1,21 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./style.css";
 import History from "../history/history";
+import { v4 as uuidv4 } from "uuid";
 
 function Url() {
+  const [url, setUrl] = useState("");
   const [errorMsg, setErrorMsg] = useState("");
   const [inputMissing, setInputMissing] = useState(false);
-  const [historyArr, setHistoryArr] = useState([]);
-  //  useState([
-  //   {
-  //     id: 1,
-  //     originalLink: "https://www.twitter.com",
-  //     shortLink: "https://www.relink/ffYooP",
-  //     isCopied: false,
-  //   },
-  //   {
-  //     id: 2,
-  //     originalLink: "https://www.twitter.com",
-  //     shortLink: "https://www.relink/ffYooP",
-  //     isCopied: false,
-  //   },
-  //   {
-  //     id: 3,
-  //     originalLink: "https://www.twitter.com",
-  //     shortLink: "https://www.relink/ffYooP",
-  //     isCopied: false,
-  //   },
-  // ]);
+  const [historyArr, setHistoryArr] = useState(() => {
+    return JSON.parse(localStorage.getItem("shortened-urls")) || [];
+  });
 
   const handleCopy = (id) => {
     setHistoryArr((prev) =>
       prev.map((h) => {
         if (h.id === id) {
+          navigator.clipboard.writeText(h.shortLink);
           return { ...h, isCopied: true };
         } else {
           return { ...h, isCopied: false };
@@ -38,6 +23,53 @@ function Url() {
       })
     );
   };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    if (url.length === 0) {
+      //console.log("hi");
+
+      setInputMissing(true);
+      setErrorMsg("Please add a link");
+    } else {
+      setInputMissing(false);
+      setErrorMsg("");
+
+      const apiUrl = "https://api.shrtco.de/v2/shorten?url=" + url;
+
+      fetch(apiUrl)
+        .then((response) => response.json())
+        .then((data) => {
+          //console.log(data);
+
+          if (data.ok) {
+            const historyObj = {
+              id: uuidv4(),
+              originalLink: url,
+              shortLink: data.result.full_short_link,
+              isCopied: false,
+            };
+
+            setHistoryArr((prev) => [...prev, historyObj]);
+          }
+        });
+    }
+
+    //console.log("hi2");
+  };
+
+  useEffect(() => {
+    localStorage.setItem("shortened-urls", JSON.stringify(historyArr));
+  }, [historyArr]);
+
+  useEffect(() => {
+    setHistoryArr((prev) =>
+      prev.map((h) => {
+        return { ...h, isCopied: false };
+      })
+    );
+  }, []);
 
   return (
     <div className="url_parent">
@@ -48,6 +80,8 @@ function Url() {
               <div className="p-2">
                 <input
                   type="text"
+                  value={url}
+                  onChange={(e) => setUrl(e.target.value)}
                   className={inputMissing ? "input_url_error" : "input_url"}
                   placeholder="Shorten a link here..."
                 />
@@ -58,7 +92,9 @@ function Url() {
             </div>
           </div>
           <div className="p-2 flex-fill">
-            <button className="button_shorten">Shorten It!</button>
+            <button onClick={handleSubmit} className="button_shorten">
+              Shorten It!
+            </button>
           </div>
         </div>
       </div>

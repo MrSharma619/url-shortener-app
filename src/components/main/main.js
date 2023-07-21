@@ -26,16 +26,16 @@ function Main() {
       <br></br>
       <br></br>
       <br></br>
-      <div id="features_grey_bg" className="grey_bg">
+      <div className="grey_bg">
         <Url />
 
         <br></br>
         <br></br>
         <br></br>
         <br></br>
-
-        <MidSection />
-
+        <div id="features">
+          <MidSection />
+        </div>
         <br></br>
         <br></br>
         <br></br>

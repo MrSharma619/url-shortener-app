@@ -7,4 +7,56 @@
 .d-flex-footer {
   display: flex;
   color: white;
+  justify-content: space-between;
+  padding: 70px 100px 0 100px;
+}
+
+.footer_website_name {
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.d-flex-col1,
+.d-flex-col2,
+.d-flex-col3 {
+  padding-top: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.footer_p1 {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.link_foot {
+  text-decoration: none;
+  color: hsl(0, 0%, 75%);
+  font-size: 14px;
+}
+
+.d-flex-icons-footer {
+  display: flex;
+}
+
+.icon-link-footer :hover {
+  transform: scale(1.5);
+  box-shadow: 0 0 10px hsl(180, 66%, 49%);
+}
+
+.link_foot:hover {
+  color: hsl(180, 66%, 49%);
+}
+
+.flex-title-footer {
+  flex-grow: 0.2;
+}
+
+.section_sublink_footer {
+  margin-bottom: 10px;
+}
+
+.section_socials_footer {
+  margin-top: 12px;
+  margin-right: 20px;
 }

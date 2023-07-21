@@ -9,17 +9,17 @@ function Navbar() {
         </a>
       </li>
       <li className="li_navbar_next3">
-        <a className="a_navbar" href="#features_grey_bg">
+        <a className="a_navbar" href="#features">
           <span className="span_next3">Features</span>
         </a>
       </li>
       <li className="li_navbar_next3">
-        <a className="a_navbar" href="#contact">
+        <a className="a_navbar" href="#features">
           <span className="span_next3">Pricing</span>
         </a>
       </li>
       <li className="li_navbar_next3">
-        <a className="a_navbar" href="#about">
+        <a className="a_navbar" href="#features">
           <span className="span_next3">Resources</span>
         </a>
       </li>
